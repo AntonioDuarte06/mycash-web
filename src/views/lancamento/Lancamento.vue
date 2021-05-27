@@ -3,9 +3,10 @@
     <div class="m-4 is-dark lancamento" :class="[lancamento.tipo == 'DESPESA' ? 'despesa' : 'receita', 'lancamento']">
         <h3>
             {{lancamento.descricao}}
+            <i class="fas fa-times"></i>
         </h3>
         <p>
-            {{ lancamento.dados}} - {{lancamento.valor}}
+            {{ $filters.date(lancamento.dados) }} - {{ $filters.currency(lancamento.valor) }}
         </p>
 
     </div>

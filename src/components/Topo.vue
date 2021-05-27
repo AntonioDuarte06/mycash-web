@@ -16,26 +16,26 @@
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
         
-        <router-link to="/" class="navbar-item">
-            Lancamentos
-        </router-link>
+            <router-link to="/" class="navbar-item">
+                Lancamentos
+            </router-link>
 
-        <router-link to="/usuarios" class="navbar-item">
-            Usuários
-        </router-link>
+            <router-link to="/usuarios" class="navbar-item">
+                Usuários
+            </router-link>
 
-        
         </div>
+        
 
         <div class="navbar-end">
         <div class="navbar-item">
             <div class="buttons">
-            <a class="button ">
-                <strong>Login</strong>
-            </a>
-            <a class="button is-danger">
+            <router-link to="/login" class="button ">
+                Login
+            </router-link>
+            <button class="button is-danger" @click="onLogout">
                 Logout
-            </a>
+            </button>
             </div>
         </div>
         </div>
@@ -45,6 +45,12 @@
 
 <script>
 export default {
+    methods: {
+        onLogout(){
+            localStorage.removeItem('mycash_token')
+            this.$router.push('/login')
+        }
+    }
 
 }
 </script>

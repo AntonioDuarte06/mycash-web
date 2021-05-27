@@ -1,5 +1,5 @@
 <template>
-  
+  <LancamentoForm />
   <Lancamento 
   v-for="lanc in lancamentos" 
   :key="lanc.id"
@@ -10,9 +10,11 @@
 <script>
 
 import Lancamento from './Lancamento'
+import LancamentoForm from './LancamentoForm'
 export default {
     components:{
-        Lancamento
+        Lancamento,
+        LancamentoForm
     },
     data(){
         return {
